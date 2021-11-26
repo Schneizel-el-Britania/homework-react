@@ -1,0 +1,6 @@
+@import "/src/common/styles/colors/calendar.scss";
+
+.currentDate {
+  flex-grow: 1;
+  background-color: $date-bg-color;
+}

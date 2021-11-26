@@ -1,0 +1,12 @@
+@import "/src/common/styles/colors/calendar.scss";
+
+.calendarSection {
+  width: 100vw;
+  height: 100vh;
+  
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+
+  border: 16px solid $border-color;
+}

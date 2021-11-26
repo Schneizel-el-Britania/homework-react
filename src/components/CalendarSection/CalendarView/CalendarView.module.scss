@@ -1,0 +1,6 @@
+@import "/src/common/styles/colors/calendar.scss";
+
+.calendarView {
+  flex-grow: 1;
+  background-color: $view-bg-color;
+}

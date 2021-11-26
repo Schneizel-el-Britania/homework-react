@@ -1,6 +1,8 @@
+import CalendarSection from "./components/CalendarSection";
+
 function App() {
   return (
-   <> </>
+    <> <CalendarSection /></>
   );
 }
 
