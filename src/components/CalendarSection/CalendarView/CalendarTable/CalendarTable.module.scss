@@ -1,0 +1,10 @@
+@import "../../common/styles/funcs";
+
+.calendarTable {
+  margin: auto;
+  @extend %mainItemPosition;
+  th {
+    width: 40px;
+    height: 40px;
+  }
+}

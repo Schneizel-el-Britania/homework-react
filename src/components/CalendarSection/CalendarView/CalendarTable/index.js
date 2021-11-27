@@ -1,5 +1,6 @@
 import { format, startOfMonth, getDaysInMonth } from 'date-fns'
 import React from 'react'
+import styles from './CalendarTable.module.scss'
 
 export default function CalendarTable(props) {
   const daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
@@ -28,7 +29,7 @@ export default function CalendarTable(props) {
   }
 
   return (
-    <table>
+    <table className={styles.calendarTable}>
       <thead>
         <tr>
           {daysOfWeek.map(formTableHead)}

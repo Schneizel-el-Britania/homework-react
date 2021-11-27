@@ -1,0 +1,26 @@
+%topItemPosition {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+}
+
+%mainItemPosition {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin sectionFormat($bg-color) {
+  flex-grow: 1;
+  background-color: $bg-color;
+  text-align: center;
+  position: relative;
+}
+
+@mixin headerTextFormat($color, $weight) {
+  color: $color;
+  font-weight: $weight;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}

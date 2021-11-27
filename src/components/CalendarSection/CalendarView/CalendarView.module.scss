@@ -1,6 +1,11 @@
-@import "/src/common/styles/colors/calendar.scss";
+@import "/src/common/styles/colors/calendar";
+@import "../common/styles/funcs";
 
 .calendarView {
-  flex-grow: 1;
-  background-color: $view-bg-color;
+  @include sectionFormat($view-bg-color);
+}
+
+.calendarHeader {
+  @extend %topItemPosition;
+  @include headerTextFormat($border-color, 800);
 }

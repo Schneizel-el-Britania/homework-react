@@ -1,0 +1,12 @@
+@import "/src/common/styles/breakpoints";
+
+:root {
+  font-family: 'Assistant', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  font-size: 14px;
+  @media screen and (min-width: $sm) {
+    font-size: 24px;
+  }
+}

@@ -15,9 +15,8 @@ export default class CalendarView extends Component {
     const { date } = this.state;
     return (
       <article className={styles.calendarView}>
-        <p>{format(date, ('LLLL'))}</p>
-        <p>{format(date, ('yyyy'))}</p>
-        <CalendarTable date={date}/>
+        <h2 className={styles.calendarHeader}>{format(date, ('LLLL yyyy'))}</h2>
+        <CalendarTable date={date} />
       </article>
     )
   }

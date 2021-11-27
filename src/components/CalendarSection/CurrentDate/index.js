@@ -14,8 +14,8 @@ export default class CurrentDate extends Component {
     const { date } = this.state;
     return (
       <article className={styles.currentDate}>
-        <p>{format(date, ('eeee'))}</p>
-        <p>{format(date, ('d'))}</p>
+        <p className={styles.dayOfWeek}>{format(date, ('eeee'))}</p>
+        <p className={styles.dayOfMonth}>{format(date, ('d'))}</p>
       </article>
     )
   }

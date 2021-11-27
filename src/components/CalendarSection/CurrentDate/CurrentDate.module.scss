@@ -1,6 +1,19 @@
-@import "/src/common/styles/colors/calendar.scss";
+@import "/src/common/styles/colors/calendar";
+@import '../common/styles/funcs';
 
 .currentDate {
-  flex-grow: 1;
-  background-color: $date-bg-color;
+  @include sectionFormat($date-bg-color);
+}
+
+.dayOfWeek {
+  @extend %topItemPosition;
+  @include headerTextFormat($date-main-text-color, 200);
+}
+
+.dayOfMonth {
+  font-size: 10rem;
+  font-weight: 500;
+  color: $date-main-text-color;
+  
+  @extend %mainItemPosition;
 }
