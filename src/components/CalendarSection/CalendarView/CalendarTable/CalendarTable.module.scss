@@ -2,19 +2,15 @@
 @import "/src/common/styles/breakpoints";
 @import "../../common/styles/funcs";
 
-.calendarTable {
-  --th-size: 35px;
-
-  margin: auto;
+.calendarTable {  
   @extend %mainItemPosition;
 
   border-collapse: separate;
-  border-spacing: calc(var(--th-size) / 2) 0;
+  border-spacing: 1rem 0.5rem;
   font-size: 1.3rem;
 
   th {
-    width: var(--th-size);
-    height: var(--th-size);
+    padding: 0.2rem;
     color: $view-main-text-color;
     font-weight: 700;
     vertical-align: middle;
@@ -22,13 +18,6 @@
 
   > thead th {
     color: $view-accented-text-color;
-  }
-
-  @media screen and (min-width: $sm) {
-    --th-size: 50px;
-  }
-  @media screen and (min-width: $xl) {
-    --th-size: 60px;
   }
 }
 

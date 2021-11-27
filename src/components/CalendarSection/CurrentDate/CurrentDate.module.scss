@@ -1,5 +1,5 @@
 @import "/src/common/styles/colors/calendar";
-@import '../common/styles/funcs';
+@import "../common/styles/funcs";
 
 .currentDate {
   @include sectionFormat($date-bg-color);
@@ -14,6 +14,6 @@
   font-size: 10rem;
   font-weight: 500;
   color: $date-main-text-color;
-  
+
   @extend %mainItemPosition;
 }
