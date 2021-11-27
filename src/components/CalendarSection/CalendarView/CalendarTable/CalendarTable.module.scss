@@ -8,11 +8,15 @@
   margin: auto;
   @extend %mainItemPosition;
 
+  border-collapse: separate;
+  border-spacing: 15px 0;
+
   th {
-    width: calc(var(--th-size) * 1.5);
+    width: var(--th-size);
     height: var(--th-size);
     color: $view-main-text-color;
     font-weight: 700;
+    vertical-align: middle;
   }
 
   > thead th {
@@ -25,4 +29,10 @@
   @media screen and (min-width: $xl) {
     --th-size: 50px;
   }
+}
+
+.calendarTable .currentDay {
+  outline: 6px solid $view-accented-text-color;
+  border-radius: 50%;
+  color: $view-accented-text-color;
 }

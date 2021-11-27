@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { format, startOfMonth, getDaysInMonth } from 'date-fns'
 import React from 'react'
 import styles from './CalendarTable.module.scss'
@@ -8,7 +9,7 @@ export default function CalendarTable(props) {
   const formTableBody = () => formCalendar(getDaysInMonth(props.date)).map((week) =>
     <tr key={week}>{
       week.map((day) =>
-        <th key={day}>{day}</th>
+        <th key={day} className={currentDayClass(day)}>{day}</th>
       )
     }</tr>
   );
@@ -27,6 +28,10 @@ export default function CalendarTable(props) {
     }
     return weeks;
   }
+
+  const currentDayClass = (day) => classNames(
+    Number(format(props.date, 'd')) === day ? styles.currentDay : undefined
+  );
 
   return (
     <table className={styles.calendarTable}>
