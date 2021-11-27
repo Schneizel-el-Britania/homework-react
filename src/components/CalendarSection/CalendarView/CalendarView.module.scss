@@ -7,5 +7,5 @@
 
 .calendarHeader {
   @extend %topItemPosition;
-  @include headerTextFormat($border-color, 800);
+  @include headerTextFormat($border-color, 700);
 }

@@ -1,10 +1,28 @@
+@import "/src/common/styles/colors/calendar";
+@import "/src/common/styles/breakpoints";
 @import "../../common/styles/funcs";
 
 .calendarTable {
+  --th-size: 30px;
+
   margin: auto;
   @extend %mainItemPosition;
+
   th {
-    width: 40px;
-    height: 40px;
+    width: calc(var(--th-size) * 1.5);
+    height: var(--th-size);
+    color: $view-main-text-color;
+    font-weight: 700;
+  }
+
+  > thead th {
+    color: $view-accented-text-color;
+  }
+
+  @media screen and (min-width: $sm) {
+    --th-size: 40px;
+  }
+  @media screen and (min-width: $xl) {
+    --th-size: 50px;
   }
 }
