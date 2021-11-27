@@ -1,29 +1,21 @@
 import { format, startOfMonth, getDaysInMonth } from 'date-fns'
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class CalendarTable extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: new Date(),
-    }
-    this.daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
-  }
-
-  formTableHead = (item) => <th>{item}</th>;
-  formTableBody = () => this.formCalendar(getDaysInMonth(this.state.date)).map((week) =>
-    <tr>{
+export default function CalendarTable(props) {
+  const daysOfWeek = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+  const formTableHead = (item) => <th key={item}>{item}</th>;
+  const formTableBody = () => formCalendar(getDaysInMonth(props.date)).map((week) =>
+    <tr key={week}>{
       week.map((day) =>
-        <th>{day}</th>
+        <th key={day}>{day}</th>
       )
     }</tr>
   );
 
-  formCalendar = (days) => {
-    const { date } = this.state;
-    const shift = this.daysOfWeek.indexOf(format(startOfMonth(date), 'EEEEEE'));
+  const formCalendar = (days) => {
+    const shift = daysOfWeek.indexOf(format(startOfMonth(props.date), 'EEEEEE'));
 
-    let allDays = [].concat(
+    const allDays = [].concat(
       Array(shift).fill(''),
       Array.from({ length: days }, (_, i) => i + 1)
     );
@@ -35,18 +27,17 @@ export default class CalendarTable extends Component {
     return weeks;
   }
 
-  render() {
-    return (
-      <table>
-        <thead>
-          <tr>
-            {this.daysOfWeek.map(this.formTableHead)}
-          </tr>
-        </thead>
-        <tbody>
-          {this.formTableBody()}
-        </tbody>
-      </table>
-    )
-  }
+  return (
+    <table>
+      <thead>
+        <tr>
+          {daysOfWeek.map(formTableHead)}
+        </tr>
+      </thead>
+      <tbody>
+        {formTableBody()}
+      </tbody>
+    </table>
+  )
+
 }
