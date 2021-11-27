@@ -3,13 +3,14 @@
 @import "../../common/styles/funcs";
 
 .calendarTable {
-  --th-size: 30px;
+  --th-size: 35px;
 
   margin: auto;
   @extend %mainItemPosition;
 
   border-collapse: separate;
-  border-spacing: 15px 0;
+  border-spacing: calc(var(--th-size) / 2) 0;
+  font-size: 1.3rem;
 
   th {
     width: var(--th-size);
@@ -24,10 +25,10 @@
   }
 
   @media screen and (min-width: $sm) {
-    --th-size: 40px;
+    --th-size: 50px;
   }
   @media screen and (min-width: $xl) {
-    --th-size: 50px;
+    --th-size: 60px;
   }
 }
 

@@ -30,7 +30,9 @@ export default function CalendarTable(props) {
   }
 
   const currentDayClass = (day) => classNames(
-    Number(format(props.date, 'd')) === day ? styles.currentDay : undefined
+    Number(format(props.date, 'd')) === day &&
+      format(props.date, 'MMMM uuuu') === format(new Date(), 'MMMM uuuu') ?
+      styles.currentDay : undefined
   );
 
   return (

@@ -1,0 +1,16 @@
+@import "/src/common/styles/colors/calendar";
+
+.button {
+  border: none;
+  background-color: transparent;
+  color: $border-color;
+
+  > * {
+    vertical-align: middle;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    color: $date-bg-color;
+  }
+}
