@@ -12,6 +12,10 @@ export default class CalendarView extends Component {
     }
   }
 
+  /**
+   * Set new date
+   * @param {object} options
+   */
   setDate = (options) => this.setState({ date: add(this.state.date, options) })
 
   render() {

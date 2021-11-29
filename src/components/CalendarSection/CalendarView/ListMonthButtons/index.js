@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import styles from './ListMonthButtons.module.scss'
 
 export default function ListMonthButtons(props) {
@@ -15,4 +16,9 @@ export default function ListMonthButtons(props) {
       }
     </button>
   )
+}
+
+ListMonthButtons.propType = {
+  onDirection: PropTypes.bool,
+  setDate: PropTypes.func.isRequired,
 }
