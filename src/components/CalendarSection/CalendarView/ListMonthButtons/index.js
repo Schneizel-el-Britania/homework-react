@@ -10,8 +10,8 @@ export default function ListMonthButtons(props) {
     >
       {
         onDirection ?
-          <span class="material-icons-round">arrow_circle_left</span> :
-          <span class="material-icons-round">arrow_circle_right</span>
+          <span className="material-icons-round">arrow_circle_left</span> :
+          <span className="material-icons-round">arrow_circle_right</span>
       }
     </button>
   )

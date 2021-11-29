@@ -1,0 +1,15 @@
+@import "/src/common/styles/colors/calendar";
+@import "../../common/styles/funcs";
+
+.headerConatiner {
+  @extend %topItemPosition;
+  * + * {
+    margin-left: 1rem;
+  }
+}
+
+.calendarHeader {
+  display: inline;
+  vertical-align: middle;
+  @include headerTextFormat($border-color, 700);
+}

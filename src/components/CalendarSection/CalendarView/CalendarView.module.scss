@@ -4,16 +4,3 @@
 .calendarView {
   @include sectionFormat($view-bg-color);
 }
-
-.headerConatiner {
-  @extend %topItemPosition;
-  * + * {
-    margin-left: 1rem;
-  }
-}
-
-.calendarHeader {
-  display: inline;
-  vertical-align: middle;
-  @include headerTextFormat($border-color, 700);
-}

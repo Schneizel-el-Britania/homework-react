@@ -1,8 +1,8 @@
-import { add, format } from 'date-fns';
+import { add } from 'date-fns';
 import React, { Component } from 'react'
+import CalendarHeader from './CalendarHeader';
 import CalendarTable from './CalendarTable';
 import styles from './CalendarView.module.scss'
-import ListMonthButtons from './ListMonthButtons';
 
 export default class CalendarView extends Component {
   constructor(props) {
@@ -16,13 +16,10 @@ export default class CalendarView extends Component {
 
   render() {
     const { date } = this.state;
+    console.log(date);
     return (
       <article className={styles.calendarView}>
-        <span className={styles.headerConatiner}>
-          <ListMonthButtons setDate={this.setDate} onDirection={true} />
-          <h2 className={styles.calendarHeader}>{format(date, ('LLLL yyyy'))}</h2>
-          <ListMonthButtons setDate={this.setDate} />
-        </span>
+        <CalendarHeader date={date} setDate={this.setDate} />
         <CalendarTable date={date} />
       </article>
     )

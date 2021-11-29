@@ -1,8 +1,7 @@
 @import "/src/common/styles/colors/calendar";
-@import "/src/common/styles/breakpoints";
 @import "../../common/styles/funcs";
 
-.calendarTable {  
+.calendarTable {
   @extend %mainItemPosition;
 
   border-collapse: separate;
@@ -19,10 +18,4 @@
   > thead th {
     color: $view-accented-text-color;
   }
-}
-
-.calendarTable .currentDay {
-  outline: 6px solid $view-accented-text-color;
-  border-radius: 50%;
-  color: $view-accented-text-color;
 }
