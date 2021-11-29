@@ -5,12 +5,12 @@
 }
 
 %topItemPosition {
-  height: 20%;
+  min-height: 20%;
   @extend %flexPosition;
 }
 
 %mainItemPosition {
-  height: 60%;
+  min-height: 60%;
   @extend %flexPosition;
 }
 
