@@ -1,17 +1,30 @@
+%flexPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%topItemPosition {
+  height: 20%;
+  @extend %flexPosition;
+}
+
 %mainItemPosition {
-  // padding-top: 15%;  
-  // position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
+  height: 60%;
+  @extend %flexPosition;
+}
+
+@mixin itemPosition($height) {
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin sectionFormat($bg-color) {
   flex-basis: 50%;
   background-color: $bg-color;
   text-align: center;
-  position: relative;
-
-  // padding: 2vw 10vw;
 }
 
 @mixin headerTextFormat($color, $weight) {

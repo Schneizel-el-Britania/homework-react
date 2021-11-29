@@ -1,10 +1,11 @@
 @import "/src/common/styles/colors/calendar";
 @import "../../common/styles/funcs";
 
-.calendarTable {
+.tableContainer {
   @extend %mainItemPosition;
+}
 
-  margin: auto;
+.calendarTable {
   border-collapse: separate;
   border-spacing: 2vw 1vw;
   font-size: 1.3rem;
