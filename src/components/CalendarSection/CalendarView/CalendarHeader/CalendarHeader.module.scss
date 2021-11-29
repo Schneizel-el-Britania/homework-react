@@ -2,10 +2,10 @@
 @import "../../common/styles/funcs";
 
 .headerConatiner {
-  @extend %topItemPosition;
-  * + * {
-    margin-left: 1rem;
-  }
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .calendarHeader {

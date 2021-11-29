@@ -4,8 +4,9 @@
 .calendarTable {
   @extend %mainItemPosition;
 
+  margin: auto;
   border-collapse: separate;
-  border-spacing: 1rem 0.5rem;
+  border-spacing: 2vw 1vw;
   font-size: 1.3rem;
 
   th {

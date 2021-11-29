@@ -6,7 +6,6 @@
 }
 
 .dayOfWeek {
-  @extend %topItemPosition;
   @include headerTextFormat($date-main-text-color, 200);
 }
 

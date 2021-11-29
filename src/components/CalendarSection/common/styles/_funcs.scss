@@ -1,17 +1,8 @@
-%topItemPosition {
-  position: absolute;
-  top: 10%;
-  left: 0;
-  right: 0;
-}
-
 %mainItemPosition {
-  margin: 5% auto;
-  padding-bottom: 5%;
-
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  // padding-top: 15%;  
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
 }
 
 @mixin sectionFormat($bg-color) {
@@ -19,6 +10,8 @@
   background-color: $bg-color;
   text-align: center;
   position: relative;
+
+  // padding: 2vw 10vw;
 }
 
 @mixin headerTextFormat($color, $weight) {
