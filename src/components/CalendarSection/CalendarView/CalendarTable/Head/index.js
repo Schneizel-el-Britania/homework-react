@@ -1,13 +1,12 @@
 import React from 'react'
-import daysOfWeek from '../data';
+import { daysOfWeek } from '../data';
+import styles from './Head.module.scss'
 
 export default function Head() {
-  const formTableHead = (item) => <th key={item}>{item}</th>;
+  const formTableHead = (item) => <div key={item}>{item}</div>;
   return (
-    <thead>
-      <tr>
-        {daysOfWeek.map(formTableHead)}
-      </tr>
-    </thead>
+    <div className={styles.header}>
+      {daysOfWeek.map(formTableHead)}
+    </div>
   )
 }

@@ -6,10 +6,10 @@ import styles from './CalendarTable.module.scss'
 export default function CalendarTable(props) {
   return (
     <div className={styles.tableContainer}>
-      <table className={styles.calendarTable}>
+      <div className={styles.calendarTable}>
         <Head />
         <Body />
-      </table>
+      </div>
     </div>
   )
 }

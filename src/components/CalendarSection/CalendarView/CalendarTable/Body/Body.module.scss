@@ -1,5 +1,8 @@
 @import "/src/common/styles/colors/calendar";
 
+.body {
+  color: $view-main-text-color;
+}
 .currentDay {
   outline: 6px solid $view-accented-text-color;
   border-radius: 50%;

@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { format, getDaysInMonth, startOfMonth } from 'date-fns';
-import daysOfWeek from '../data';
 import styles from './Body.module.scss'
 import { WithDate } from '../../../../HOCs';
-
+import { maxDaysCount, daysOfWeek } from '../data';
 
 class Body extends Component {
   constructor(props) {
@@ -11,29 +10,18 @@ class Body extends Component {
     this.currentDate = this.props.date;
   }
 
-  formTableBody = () => this.formCalendar(getDaysInMonth(this.props.date)).map((week) =>
-    <tr key={week}>
-      {
-        week.map((day) =>
-          <th
-            key={day + Math.random()}
-            className={this.currentDayClass(day)}>{day}
-          </th>)
-      }
-    </tr>
+  formTableBody = () => this.formCalendar(getDaysInMonth(this.props.date)).map((day) =>
+    <div className={this.currentDayClass(day)}>{day}</div>
   );
 
   formCalendar = (days) => {
     const shift = daysOfWeek.indexOf(format(startOfMonth(this.props.date), 'EEEEEE'));
-
-    const allDays = [].concat(
+    const rest = maxDaysCount - (days + shift);
+    return [].concat(
       Array(shift).fill(''),
-      Array.from({ length: days }, (_, i) => i + 1)
+      Array.from({ length: days }, (_, i) => i + 1),
+      Array(rest).fill(''),
     );
-
-    const weeks = [];
-    while (allDays.length) { weeks.push(allDays.splice(0, 7)); }
-    return weeks;
   }
 
   currentDayClass = (day) => {
@@ -44,9 +32,9 @@ class Body extends Component {
 
   render() {
     return (
-      <tbody>
+      <div className={styles.body}>
         {this.formTableBody()}
-      </tbody>
+      </div>
     )
   }
 
