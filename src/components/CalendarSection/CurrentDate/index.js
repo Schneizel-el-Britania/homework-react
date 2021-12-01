@@ -1,8 +1,9 @@
-import { format } from 'date-fns';
 import React from 'react'
+import { format } from 'date-fns';
+import { WithDate } from '../../HOCs';
 import styles from './CurrentDate.module.scss'
 
-export default function CurrentDate(props) {
+function CurrentDate(props) {
   const { date } = props;
   return (
     <article className={styles.currentDate}>
@@ -11,3 +12,5 @@ export default function CurrentDate(props) {
     </article>
   )
 }
+
+export default WithDate(CurrentDate);

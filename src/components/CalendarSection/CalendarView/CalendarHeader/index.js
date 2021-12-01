@@ -1,10 +1,10 @@
-import { format } from 'date-fns'
-import React from 'react'
-import PropTypes from 'prop-types';
-import ListMonthButtons from '../ListMonthButtons'
-import styles from './CalendarHeader.module.scss'
+import React from 'react';
+import { format } from 'date-fns';
+import ListMonthButtons from '../ListMonthButtons';
+import styles from './CalendarHeader.module.scss';
+import { WithDate } from '../../../HOCs';
 
-export default function CalendarHeader(props) {
+function CalendarHeader(props) {
   const { date, setDate } = props;
   return (
     <span className={styles.headerConatiner}>
@@ -15,7 +15,4 @@ export default function CalendarHeader(props) {
   )
 }
 
-CalendarHeader.propTypes = {
-  date: PropTypes.object.isRequired,
-  setDate: PropTypes.func.isRequired,
-}
+export default WithDate(CalendarHeader);

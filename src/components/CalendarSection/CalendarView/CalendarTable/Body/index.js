@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { format, getDaysInMonth, startOfMonth } from 'date-fns';
 import daysOfWeek from '../data';
 import styles from './Body.module.scss'
+import { WithDate } from '../../../../HOCs';
 
-export default class Body extends Component {
+
+class Body extends Component {
   constructor(props) {
     super(props);
     this.currentDate = this.props.date;
@@ -35,11 +37,9 @@ export default class Body extends Component {
   }
 
   currentDayClass = (day) => {
-    if (this.currentDate) {
-      return Number(format(this.currentDate, 'd')) === day &&
-        format(this.props.date, 'MMMM uuuu') === format(this.currentDate, 'MMMM uuuu') ?
-        styles.currentDay : undefined
-    }
+    const compareDay = Number(format(this.currentDate, 'd')) === day;
+    const compareMonth = format(this.props.date, 'MMMM uuuu') === format(this.currentDate, 'MMMM uuuu');
+    if (compareDay && compareMonth) return styles.currentDay;
   }
 
   render() {
@@ -51,3 +51,5 @@ export default class Body extends Component {
   }
 
 }
+
+export default WithDate(Body);

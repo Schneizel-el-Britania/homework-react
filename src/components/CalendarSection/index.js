@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { add } from 'date-fns';
+import { CalendarContext } from '../../context';
 import CalendarView from './CalendarView'
 import CurrentDate from './CurrentDate'
 import styles from './CalendarSection.module.scss'
-import { add } from 'date-fns';
+
 
 export default class CalendarSection extends Component {
   constructor(props) {
@@ -21,11 +23,12 @@ export default class CalendarSection extends Component {
   render() {
     const { date } = this.state;
     return (
-      <section className={styles.calendarSection}>
-        <CurrentDate date={date} />
-        <CalendarView date={date} setDate={this.setDate} />
-      </section>
+      <CalendarContext.Provider value={[date, this.setDate]}>
+        <section className={styles.calendarSection}>
+          <CurrentDate />
+          <CalendarView />
+        </section>
+      </CalendarContext.Provider>
     )
   }
-
 }
